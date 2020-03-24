@@ -40,8 +40,8 @@ spec:
   ports:
     - port: 443
       targetPort: 8443
-  type: LoadBalancer
-
+  type:LoadBalance
+	
   selector:
     k8s-app: kubernetes-dashboard
 
@@ -285,8 +285,8 @@ spec:
             initialDelaySeconds: 30
             timeoutSeconds: 30
           volumeMounts:
-            - mountPath: /tmp
-              name: tmp-volume
+          - mountPath: /tmp
+            name: tmp-volume
           securityContext:
             allowPrivilegeEscalation: false
             readOnlyRootFilesystem: true
